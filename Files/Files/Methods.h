@@ -8,3 +8,4 @@
 
 void Courses_file(std::string wsname);
 void Payroll_file(std::string wsname);
+void Random_file(std::string wsname);

@@ -1,8 +1,9 @@
 ﻿/*
 *Header
 */
-#include "Methods.h"
+#include <cstdlib>
 #include <vector>
+#include "Methods.h"
 using namespace std;
 
 void Courses_file(string wsname)
@@ -25,7 +26,7 @@ void Courses_file(string wsname)
     cin.ignore();
     cout << "Enter your the last name of your teacher\n";
     string teacher_last_name;
-    getline (cin,teacher_last_name);
+    getline(cin,teacher_last_name);
 
     // Creating file
     ofstream fout;
@@ -79,14 +80,20 @@ void Payroll_file(string wsname)
             break;
         }
 }
-
+    // initilizing file
+    ofstream payroll;
+    payroll.open("Payroll.txt");
+    
     // now, having employeer put employee info for each one
-    vector <string> employee_information;
+    
     for (int j = 1; j<= employees; j++)
     {
+        // initilizing vector inside so it gets reset every time
+        vector <string> employee_information;
         cout << "Enter the name of employee #" << j << endl;
         string name_throwaway;
         getline (cin, name_throwaway);
+        // adding user info into vector
         employee_information.emplace_back(name_throwaway);
         cout << "Enter the hourly wage of " << name_throwaway << endl;
         string wage;
@@ -95,19 +102,50 @@ void Payroll_file(string wsname)
         cout << "Enter the amount of hours " << name_throwaway << " worked this past week\n";
         string hours;
         getline(cin,hours);
-        employee_information.emplace_back(hours);       
+        employee_information.emplace_back(hours);
+
+        // writing to file once per employee to allow for unlimited scalability
+        std::ostream_iterator<std::string> output_iterator(payroll, "\t");
+        std::copy(employee_information.begin(), employee_information.end(), output_iterator);
+        payroll << endl << endl;
     }
-    // Now making file to print to
-    ofstream payroll;
-    payroll.open("Payroll.txt");
 
-    // Note to self: Using vector and storing everything there, Each employee has 3 values
-    // So I was thinking that I could have the program calculate the length and somehow based off that section off
-    // and print 3 per person and
-
-    int length = employee_information.size();
-    
+    // closing file to make sure no data corruption
+   payroll.close();
     
     
 }
+
+void Random_file(string wsname)
+{
+    // print out worksheet name
+    cout << wsname << endl;
+
+    cout << "How many random numbers do you want?\n";
+    int number = 0;
+    cin >> number;
+    ofstream random;
+    while (number > 100 || number <= 0)
+    {
+        cout << "Please enter a number between 0 and 100, including 100 and 1.\n";
+        cin >> number;
+    }
+    int max = 100;
+    int j = 0;
+    random.open("randomnumber.txt");
+    srand(time(0));
+    while (j != number)
+    {
+        
+        random << rand() %max;
+        random << endl;
+        j++;
+    }
+    random.close();
+}
+
+
+
+
+
 
