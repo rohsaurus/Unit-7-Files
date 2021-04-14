@@ -2,7 +2,7 @@
 *Header
 */
 #include <cstdlib>
-#include <vector>
+
 #include "Methods.h"
 using namespace std;
 
@@ -104,6 +104,14 @@ void Payroll_file(string wsname)
         getline(cin,hours);
         employee_information.emplace_back(hours);
 
+        // calculatotions to figure out gross pay and then make it string for vector
+        double wage_double = stod(wage.substr(1));
+        double hours_double = stod(hours);
+        string gross_pay = "$";
+        double gross_pay_double = wage_double * hours_double;
+        string temp = std::to_string(gross_pay_double);
+        gross_pay.append(temp);
+        employee_information.emplace_back(gross_pay);
         // writing to file once per employee to allow for unlimited scalability
         std::ostream_iterator<std::string> output_iterator(payroll, "\t");
         std::copy(employee_information.begin(), employee_information.end(), output_iterator);
@@ -130,9 +138,12 @@ void Random_file(string wsname)
         cout << "Please enter a number between 0 and 100, including 100 and 1.\n";
         cin >> number;
     }
-    int max = 100;
+    cout << "Please choose the max number that can be randomly generated\n";
+    int max = 0;
+    // Extra Thing
+    cin >> max;
     int j = 0;
-    random.open("randomnumber.txt");
+    random.open("numbers.txt");
     srand(time(0));
     while (j != number)
     {

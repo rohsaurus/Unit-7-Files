@@ -1,3 +1,4 @@
-John Wick	10	10	
-Your mum	20	20	
-Your dad	340	340	
+Employee 1	$10	10	$100.000000	
+
+Employee 2	$20	20	$400.000000	
+

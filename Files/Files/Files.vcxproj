@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="Files.cpp" />
     <ClCompile Include="WSCreate.cpp" />
+    <ClCompile Include="WSRead.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Methods.h" />
