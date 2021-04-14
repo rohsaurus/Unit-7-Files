@@ -9,8 +9,9 @@
  *Fix weird output in WSRead Question #2 where at the bottom, stuff repeats
  *Finish WSRead Worksheet
  *Finish WSAppend Worksheet
+ *Do Header on all files
  *Make sure to comment and check test casess
-
+*/
 using namespace std;
 int main(int argc, char* argv[])
 {
@@ -25,7 +26,7 @@ int main(int argc, char* argv[])
     //Payroll_file(payroll_txt);
     //Random_file(numbers_txt);
    // grade_report(grade_report_txt);
-    payroll_format(payroll_formatting_txt);
+    //payroll_format(payroll_formatting_txt);
     
     return 0;
 }

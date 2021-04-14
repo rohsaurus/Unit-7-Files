@@ -6,7 +6,10 @@
 #include <sstream>
 #include <stdlib.h>
 #include <Math.h>
+
+using namespace global_variables;
 using namespace std;
+
 void grade_report(string wsname)
 {
     cout << wsname << endl;
@@ -62,7 +65,7 @@ void payroll_format(string wsname)
     ifstream employees;
     employees.open("Payroll.txt");
     string printing;
-    for (int i =0; !employees.eof();i++)
+    for (int i = 0; i != number_of_employees; i++)
     {
         cout << endl;
         employees >> printing;

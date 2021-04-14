@@ -1,9 +1,10 @@
 ﻿/*
 *Header
 */
+#include "Methods.h"
 #include <cstdlib>
 
-#include "Methods.h"
+using namespace global_variables;
 using namespace std;
 
 void Courses_file(string wsname)
@@ -49,7 +50,6 @@ void Payroll_file(string wsname)
 
     int count = 0;
     int triggered = 0;
-    int employees = 0;
     while (true){
         
     cout << "Enter the number of employees you would like to enter\n";
@@ -76,7 +76,7 @@ void Payroll_file(string wsname)
         else if (triggered == 0)
         {
             cout << "Your inputs are validated!\n";
-            employees = stoi(employees_in_string_format);
+            number_of_employees = stoi(employees_in_string_format);
             break;
         }
 }
@@ -86,7 +86,7 @@ void Payroll_file(string wsname)
     
     // now, having employeer put employee info for each one
     
-    for (int j = 1; j<= employees; j++)
+    for (int j = 1; j<= number_of_employees; j++)
     {
         // initilizing vector inside so it gets reset every time
         vector <string> employee_information;
