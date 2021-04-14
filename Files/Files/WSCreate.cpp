@@ -1,5 +1,8 @@
 ﻿/*
-*Header
+*Rohan Parikh
+*Unit 7 Files
+* 1 April 2021 - 
+*Extra Thing for Worksheet Create: In random number method, user can choose the max number that can be generated 
 */
 #include "Methods.h"
 #include <cstdlib>
@@ -88,7 +91,7 @@ void Payroll_file(string wsname)
     
     for (int j = 1; j<= number_of_employees; j++)
     {
-        // initilizing vector inside so it gets reset every time
+        // initializing vector inside so it gets reset every time
         vector <string> employee_information;
         cout << "Enter the name of employee #" << j << endl;
         string name_throwaway;
