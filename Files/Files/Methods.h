@@ -3,6 +3,7 @@
 *Unit 7 Files
 * 1 April 2021 - 
 *Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
+*Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
 */
 #pragma once
 #define METHODS_H

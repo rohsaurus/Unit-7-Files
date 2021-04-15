@@ -3,17 +3,12 @@
  *Unit 7 Files
  * 1 April 2021 - 
  *Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
+ *Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
  */
 #include "Methods.h"
 
 
-/*
- *To do List
- *Finish WSAppend Worksheet
- *Add Extra Thing to WSREAD workwsheet
- *Make sure to comment and check test casess to make sure that they are satisfied
- *Do output
-*/
+
 using namespace std;
 int main(int argc, char* argv[])
 {

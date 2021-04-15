@@ -1,0 +1,4 @@
+Entries: 11
+Even #s: 11
+Odd #s: 0
+Average: 0

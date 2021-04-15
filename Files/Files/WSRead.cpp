@@ -2,7 +2,8 @@
 *Rohan Parikh
 *Unit 7 Files
 * 1 April 2021 - 
-*Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
+*Extra Thing for Worksheet Create: Adding the random numbers together and printing the output\
+*Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
 */
 
 #include "Methods.h"
@@ -59,6 +60,9 @@ void grade_report(string wsname)
     cout << "Test #3\t               " << grade_three_double << endl;
     cout << endl;
     cout << "Average: " << rounded << endl;
+
+    // closing files
+    grades.close();
 }
 
 // payroll function
@@ -88,6 +92,8 @@ void payroll_format(string wsname)
         cout << printing;
         cout << endl;
     }
+    // closing file
+    employees.close();
 }
 
 // even or odd function
@@ -110,7 +116,12 @@ void even_or_odd(string wsname)
     int odd = 0;
     int entries = 0;
     string dump_from_file_to_memory;
+    // extra thing: asking user if they want the results written to a file or printed to console
+    cout << "Do you want your stastics written to a file, or printed to the console. Type 'file' for file. Anything else will go to the console\n";
+    string user_choice;
+    cin >> user_choice;
 
+  
     // runs until the file is fully read
     while (!numbers.fail() && !numbers.eof())
     {
@@ -128,14 +139,32 @@ void even_or_odd(string wsname)
             odd++;
         }
     }
-    // creating space to make output more readable
-    cout << endl;
-    cout << "Entries: " << entries << endl;
-    cout << "Even #s: " << even << endl;
-    cout << "Odd #s: " << odd << endl;
+
     // calculating average
     double average = sum/entries;
+    
+    // Writing to a file choice; extra thing
+    fstream stats;
+    stats.open("stats.txt",fstream::out);
+    if (user_choice == "file")
+    {
+        stats << "Entries: " << entries << endl;
+        stats << "Even #s: " << even << endl;
+        stats << "Odd #s: " << odd << endl;
+        stats << "Average: " << average << endl;
+    }
+    else
+    {
+        // creating space to make output more readable
+        cout << endl;
+        cout << "Entries: " << entries << endl;
+        cout << "Even #s: " << even << endl;
+        cout << "Odd #s: " << odd << endl;
+        cout << "Average: " << average << endl;
+    }
 
-    cout << "Average: " << average << endl;
+    // closing files
+    stats.close();
+    numbers.close();
     
 }
