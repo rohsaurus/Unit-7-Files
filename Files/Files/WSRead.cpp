@@ -2,7 +2,7 @@
 *Rohan Parikh
 *Unit 7 Files
 * 1 April 2021 - 
-*Extra Thing for Worksheet Create: In random number method, user can choose the max number that can be generated 
+*Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
 */
 
 #include "Methods.h"
@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #include <Math.h>
 
-using namespace global_variables;
 using namespace std;
+
+//intilizing global variables
+//int number_of_employees;
+
 // grade report function
 void grade_report(string wsname)
 {
@@ -70,9 +73,9 @@ void payroll_format(string wsname)
     ifstream employees;
     employees.open("Payroll.txt");
     string printing;
+    cout << endl;
     for (int i = 0; i != number_of_employees; i++)
     {
-        cout << endl;
         employees >> printing;
         cout << printing << " ";
         employees >> printing;
@@ -90,17 +93,22 @@ void payroll_format(string wsname)
 // even or odd function
 void even_or_odd(string wsname)
 {
+    // spacing out
+    cout << endl;
+
+    
     // printing out worksheet name
     cout << wsname << endl;
+    
     // ifstream so i can only read from file
     ifstream numbers;
     numbers.open("numbers.txt");
 
     // making variables to allow for the values to change and be reflected and counted
     double sum = 0;
-    int even;
-    int odd;
-    int entries;
+    int even = 0;
+    int odd = 0;
+    int entries = 0;
     string dump_from_file_to_memory;
 
     // runs until the file is fully read
@@ -120,12 +128,14 @@ void even_or_odd(string wsname)
             odd++;
         }
     }
+    // creating space to make output more readable
+    cout << endl;
     cout << "Entries: " << entries << endl;
-    cout << "Even #s: " << even;
-    cout << "Odd #s: " << odd;
+    cout << "Even #s: " << even << endl;
+    cout << "Odd #s: " << odd << endl;
     // calculating average
     double average = sum/entries;
 
-    cout << "Average: " << average;
+    cout << "Average: " << average << endl;
     
 }

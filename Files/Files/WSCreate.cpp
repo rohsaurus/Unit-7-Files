@@ -2,13 +2,15 @@
 *Rohan Parikh
 *Unit 7 Files
 * 1 April 2021 - 
-*Extra Thing for Worksheet Create: In random number method, user can choose the max number that can be generated 
+*Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
 */
 #include "Methods.h"
 #include <cstdlib>
 
-using namespace global_variables;
 using namespace std;
+
+// global variables declartation
+int number_of_employees = 0;
 
 void Courses_file(string wsname)
 {
@@ -143,19 +145,32 @@ void Random_file(string wsname)
     }
     cout << "Please choose the max number that can be randomly generated\n";
     int max = 0;
-    // Extra Thing
     cin >> max;
+    while (max > 100 || max <= 0)
+    {
+        cout << "Enter a max number between 0 and 101.\n";
+        cin >> max;
+    }
+
+    // extra thing variables
+
+    int sum = 0;
     int j = 0;
     random.open("numbers.txt");
     srand(time(0));
     while (j != number)
     {
-        
-        random << rand() %max;
+        int random_num = 0;
+        random_num << rand() %max;
+        sum = sum + random_num;
+        random << random_num;
         random << endl;
         j++;
     }
     random.close();
+
+    // Extra Thing: Adding the random numbers together
+    cout << "The sum of the random numbers is " << sum;
 }
 
 

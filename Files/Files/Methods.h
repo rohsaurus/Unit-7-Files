@@ -2,14 +2,12 @@
 *Rohan Parikh
 *Unit 7 Files
 * 1 April 2021 - 
-*Extra Thing for Worksheet Create: In random number method, user can choose the max number that can be generated 
+*Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
 */
-#ifndef METHODS_H
+#pragma once
 #define METHODS_H
 #include <cfguard.h>
 #ifdef METHODS_H
-
-#pragma once
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -17,11 +15,7 @@
 
 
 // declaring global variables
-
-namespace global_variables
-{
-    int number_of_employees;
-}
+extern int number_of_employees;
 
 // functions
 void Courses_file(std::string wsname);
@@ -32,4 +26,3 @@ void payroll_format(std::string wsname);
 void even_or_odd(std::string wsname);
 
 #endif
-#endif // METHODS_H
