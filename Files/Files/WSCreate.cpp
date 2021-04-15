@@ -4,6 +4,7 @@
 * 1 April 2021 - 
 *Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
 *Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
+*Extra Thing for Worksheet Append: USer can choose whether they want the young dog, old dog in a file or printing to the console.
 */
 #include "Methods.h"
 #include <cstdlib>
