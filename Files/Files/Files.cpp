@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
     const string dog_txt = "Worksheet Append | Making dog file";
     const string dog_ages_txt = "Worksheet Append | Printing dogs based of young age and old age";
     const string more_dogs_txt = "Worksheet Append | Need to add more dogs\n";
+    const string printing_dogs_txt = "Worksheet Append | Printing dog names\n";
     //Worksheet Create Methods
    // Courses_file(courses_txt);
     //Payroll_file(payroll_txt);
@@ -30,6 +31,6 @@ int main(int argc, char* argv[])
     create_file(dog_txt);
     dog_age(dog_ages_txt);
     more_dogs(more_dogs_txt);
-    
+    print_dogs(printing_dogs_txt);
     return 0;
 }

@@ -47,7 +47,7 @@ void dog_age(string wsname)
     ifstream DogeCoin;
     DogeCoin.open("dog.txt");
 
-    // making files to take data from file and vector
+    // making variables to take data from file and compare it to check if dog is old or young
     string file_output = " ";
     string file_output_second = " ";
     int age_from_file = 0;
@@ -134,11 +134,66 @@ void dog_age(string wsname)
 }
 
 
-// adding more dogs method :)
+// adding more dogs method
 void more_dogs(string wsname)
 {
     // printing worksheet name
     cout << wsname << endl;
 
+    // opening up file for append
+    fstream moreDogs;
+    moreDogs.open("dog.txt", fstream::app);
+
+    // appending data
+    moreDogs << "Beatrice 3" << endl;
+    moreDogs << "Tasha 4" << endl;
+    moreDogs << "Patty 1" << endl;
+
+    // closing file
+    moreDogs.close();
     
 }
+
+void print_dogs(string wsname)
+{
+    // printing worksheet name
+    cout << wsname << endl;
+
+    // opening up file for reading
+    ifstream doge;
+    doge.open("dog.txt");
+
+
+    // making variables to take data from file to print it out without printing number
+    string file_output = " ";
+    string file_output_second = " ";
+    int age_from_file = 0;
+    // i need this vector so i can access the previous value
+    vector<string> file_values;
+    int j = 0;
+    // checking if older than 7 or less
+    while (doge >> file_output)
+    {
+        file_values.push_back(file_output);
+        try
+        {
+            age_from_file = stoi(file_output);
+            // setting file_output_Second to previous value so its a string and not a number
+            file_output_second = file_values[j - 1];
+
+            // printing file_output_second so strings print
+            cout << file_output_second << endl;
+        
+        }
+        catch (exception)
+        {
+            // not an integer
+            // resetting variables
+            age_from_file = 0;
+            file_output = " ";
+        }
+        j ++;
+    }
+    
+}
+

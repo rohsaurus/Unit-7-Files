@@ -30,4 +30,5 @@ void even_or_odd(std::string wsname);
 void create_file(std::string wsname);
 void dog_age(std::string wsname);
 void more_dogs(std::string wsname);
+void print_dogs(std::string wsname);
 #endif
