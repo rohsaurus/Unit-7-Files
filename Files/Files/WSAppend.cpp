@@ -194,6 +194,6 @@ void print_dogs(string wsname)
         }
         j ++;
     }
-    
+    doge.close();
 }
 
