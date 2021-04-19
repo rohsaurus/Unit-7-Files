@@ -11,6 +11,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     // Worksheet Name Variables
+    // made them constant since these do not to be changed
     const string courses_txt = "Worksheet Create | Courses.txt question";
     const string payroll_txt = "Worksheet Create | Payroll.txt question";
     const string numbers_txt = "Worksheet Create | Numbers.txt question";
@@ -25,9 +26,13 @@ int main(int argc, char* argv[])
    // Courses_file(courses_txt);
     //Payroll_file(payroll_txt);
     //Random_file(numbers_txt);
+    
+    //Worksheet Read Methods
     //grade_report(grade_report_txt);
     //payroll_format(payroll_formatting_txt);
     //even_or_odd(even_or_odd_txt);
+
+    // Worksheet Append methods
     create_file(dog_txt);
     dog_age(dog_ages_txt);
     more_dogs(more_dogs_txt);

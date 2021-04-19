@@ -7,6 +7,7 @@
 *Extra Thing for Worksheet Append: USer can choose whether they want the young dog, old dog in a file or printing to the console.
 */
 
+// imports
 #include "Methods.h"
 #include <cstdlib>
 #include <ctime>
@@ -16,6 +17,8 @@ using namespace std;
 // global variables declartation
 int number_of_employees = 0;
 
+
+// methods for course file method in create worksheet
 void Courses_file(string wsname)
 {
     // worksheet name
@@ -55,7 +58,7 @@ void Payroll_file(string wsname)
 
     // Asking for user info first
 
-    // for loop to make sure amount of employees is integer
+    // for loop to make sure amount of employees is integer (data verification)
 
     int count = 0;
     int triggered = 0;
@@ -99,7 +102,10 @@ void Payroll_file(string wsname)
     {
         // initializing vector inside so it gets reset every time
         vector <string> employee_information;
+
+        // asking for user info and writing it to a vector that will be writen to a file
         cout << "Enter the name of employee #" << j << endl;
+        // garbage variable to temp store a value
         string name_throwaway;
         getline (cin, name_throwaway);
         // adding user info into vector
