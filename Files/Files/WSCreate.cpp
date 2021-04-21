@@ -1,7 +1,7 @@
 ﻿/*
 *Rohan Parikh
 *Unit 7 Files
-* 1 April 2021 - 
+* 1 April 2021 - 21 April 2021
 *Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
 *Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
 *Extra Thing for Worksheet Append: USer can choose whether they want the young dog, old dog in a file or printing to the console.
@@ -10,7 +10,9 @@
 // imports
 #include "Methods.h"
 #include <cstdlib>
+#include <stdlib.h>
 #include <ctime>
+#include <iomanip>
 
 using namespace std;
 
@@ -67,13 +69,14 @@ void Payroll_file(string wsname)
     cout << "Enter the number of employees you would like to enter\n";
     string employees_in_string_format;
     getline (cin, employees_in_string_format);
-        for (int i = 0; i < employees_in_string_format.length(); ++i)
+        for (int i = 0; i < employees_in_string_format.length(); i++)
         {
             triggered = 0;
             if (isdigit(employees_in_string_format[i]) == false)
             {
                 count = 1;
                 triggered = 1;
+                break;
             }
             else
             {
@@ -87,7 +90,7 @@ void Payroll_file(string wsname)
 
         else if (triggered == 0)
         {
-            cout << "Your inputs are validated!\n";
+            
             number_of_employees = stoi(employees_in_string_format);
             break;
         }
@@ -120,7 +123,9 @@ void Payroll_file(string wsname)
         employee_information.emplace_back(hours);
 
         // calculatotions to figure out gross pay and then make it string for vector
-        double wage_double = stod(wage.substr(1));
+        int pos = wage.find("$");
+        string wage_without_dollar_sign = wage.substr(pos + 1);
+        double wage_double = stod(wage_without_dollar_sign);
         double hours_double = stod(hours);
         string gross_pay = "$";
         double gross_pay_double = wage_double * hours_double;
@@ -167,14 +172,13 @@ void Random_file(string wsname)
     int sum = 0;
     int j = 0;
     random.open("numbers.txt");
-    srand(time(0));
+    srand((unsigned)time(0));
     while (j != number)
     {
         int random_num = 0;
-        random_num << rand() %max;
-        sum = sum + random_num;
-        random << random_num;
-        random << endl;
+        random_num << rand() % max;
+        sum += random_num;
+        random << random_num << endl;
         j++;
     }
     random.close();

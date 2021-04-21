@@ -1,10 +1,12 @@
 ﻿/*
 *Rohan Parikh
 *Unit 7 Files
-* 1 April 2021 - 
+* 1 April 2021 - 21 April 2021
 *Extra Thing for Worksheet Create: Adding the random numbers together and printing the output\
 *Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
 */
+
+#include <iomanip>
 
 #include "Methods.h"
 #include <sstream>
@@ -47,14 +49,17 @@ void grade_report(string wsname)
         iss >> subs;
         grades_array.push_back(subs);
     }while (iss);
+    // inserting grades into array
     string grade_one = grades_array[0];
     string grade_two = grades_array[1];
     string grade_three = grades_array[2];
+    // converting string to double and then averaging
     double grade_one_double = stod(grade_one);
     double grade_two_double = stod(grade_two);
     double grade_three_double = stod(grade_three);
     double average = (grade_one_double+grade_three_double+grade_two_double)/3;
     double rounded = round(10*average)/10;
+    // printing grade report
     cout << "Test #1\t               " << grade_one_double << endl;
     cout << "Test #2\t               " << grade_two_double << endl;
     cout << "Test #3\t               " << grade_three_double << endl;
@@ -83,13 +88,16 @@ void payroll_format(string wsname)
         employees >> printing;
         cout << printing << " ";
         employees >> printing;
-        cout << printing << "\t  ";
-        employees >> printing;
         cout << printing << "\t\t";
         employees >> printing;
         cout << printing << "\t\t";
         employees >> printing;
-        cout << printing;
+        cout << printing << "\t\t";
+        employees >> printing;
+         // finding decimal so i can force rounding because it would not work any other way
+        int pos = printing.find(".");
+        // printing substring to round
+        cout << printing.substr(0,pos+3) << "\t\t";
         cout << endl;
     }
     // closing file

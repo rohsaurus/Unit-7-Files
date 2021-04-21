@@ -1,7 +1,7 @@
 /*
  *Rohan Parikh
  *Unit 7 Files
- * 1 April 2021 - 
+ * 1 April 2021 - 21 April 2021
  *Extra Thing for Worksheet Create: Adding the random numbers together and printing the output
  *Extra Thing for Worksheet Read: User can save amount of evens, odds, entries and average to a new file
  *Extra Thing for Worksheet Append: USer can choose whether they want the young dog, old dog in a file or printing to the console.
@@ -33,9 +33,9 @@ int main(int argc, char* argv[])
     //even_or_odd(even_or_odd_txt);
 
     // Worksheet Append methods
-    create_file(dog_txt);
-    dog_age(dog_ages_txt);
-    more_dogs(more_dogs_txt);
+    //create_file(dog_txt);
+    //dog_age(dog_ages_txt);
+    //more_dogs(more_dogs_txt);
     print_dogs(printing_dogs_txt);
     return 0;
 }

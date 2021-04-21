@@ -1,5 +1,0 @@
-﻿/*
- *To do List
- *Make sure to comment and check test cases to make sure that they are satisfied
- *Do output
-*/
