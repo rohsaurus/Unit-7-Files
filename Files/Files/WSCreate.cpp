@@ -172,11 +172,11 @@ void Random_file(string wsname)
     int sum = 0;
     int j = 0;
     random.open("numbers.txt");
-    srand((unsigned)time(0));
     while (j != number)
     {
-        int random_num = 0;
-        random_num << rand() % max;
+        srand(time(NULL));
+        int random_num = NULL;
+        random_num == rand() % max;
         sum += random_num;
         random << random_num << endl;
         j++;
