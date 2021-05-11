@@ -176,7 +176,7 @@ void Random_file(string wsname)
     while (j != number)
     {
         int random_num = 0;
-        random_num << rand() % max;
+        random_num = (rand() % max);
         sum += random_num;
         random << random_num << endl;
         j++;

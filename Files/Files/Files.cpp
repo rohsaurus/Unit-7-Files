@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     //Worksheet Create Methods
    // Courses_file(courses_txt);
     //Payroll_file(payroll_txt);
-    //Random_file(numbers_txt);
+    Random_file(numbers_txt);
     
     //Worksheet Read Methods
     //grade_report(grade_report_txt);
@@ -36,6 +36,6 @@ int main(int argc, char* argv[])
     //create_file(dog_txt);
     //dog_age(dog_ages_txt);
     //more_dogs(more_dogs_txt);
-    print_dogs(printing_dogs_txt);
+    //print_dogs(printing_dogs_txt);
     return 0;
 }
