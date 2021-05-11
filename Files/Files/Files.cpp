@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     //Worksheet Read Methods
     //grade_report(grade_report_txt);
     //payroll_format(payroll_formatting_txt);
-    //even_or_odd(even_or_odd_txt);
+    even_or_odd(even_or_odd_txt);
 
     // Worksheet Append methods
     //create_file(dog_txt);
